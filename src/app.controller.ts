@@ -17,6 +17,11 @@ export class AppController {
         return this.authService.login(body);
     }
 
+    @Get('healthcheck')
+    async healthCheck() {
+        return {success: true};
+    }
+
     @Post('auth/get-message')
     async getMessage(@Body() body: LoginDto) {
         return this.authService.getMessage(body);
