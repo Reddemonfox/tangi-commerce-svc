@@ -11,6 +11,9 @@ export declare class AppController {
         access_token: string;
         user: import(".prisma/client").users;
     }>;
+    healthCheck(): Promise<{
+        success: boolean;
+    }>;
     getMessage(body: LoginDto): Promise<{
         message: string;
     }>;

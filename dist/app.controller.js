@@ -28,6 +28,9 @@ let AppController = class AppController {
     async login(body) {
         return this.authService.login(body);
     }
+    async healthCheck() {
+        return { success: true };
+    }
     async getMessage(body) {
         return this.authService.getMessage(body);
     }
@@ -48,6 +51,12 @@ __decorate([
     __metadata("design:paramtypes", [login_dto_1.LoginDto]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "login", null);
+__decorate([
+    (0, common_1.Get)('healthcheck'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "healthCheck", null);
 __decorate([
     (0, common_1.Post)('auth/get-message'),
     __param(0, (0, common_1.Body)()),
